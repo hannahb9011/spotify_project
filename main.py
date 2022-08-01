@@ -17,7 +17,7 @@ dest_addr = ('10.103.53.26', 22) #edited#
 local_addr = ('10.56.3.182', 22) #edited#
 vmchannel = vmtransport.open_channel("direct-tcpip", dest_addr, local_addr)
 #
-stdin, stdout, stderr = jhost.exec_command("show version | no-more") #edited#
+stdin, stdout, stderr = jhost.exec_command("bin/spark-submit --master spark://group3-1:7077 /home/cc/spotifyProject.py") #edited#
 #
 print stdout.read() #edited#
 #
