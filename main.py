@@ -10,11 +10,11 @@ import subprocess
 #
 vm = paramiko.SSHClient()
 vm.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-vm.connect('192.168.115.103', username='osmanl', password='xxxxxx')
+vm.connect('10.56.3.182', username='osmanl', password='')
 #
 vmtransport = vm.get_transport()
 dest_addr = ('10.103.53.26', 22) #edited#
-local_addr = ('192.168.115.103', 22) #edited#
+local_addr = ('10.56.3.182', 22) #edited#
 vmchannel = vmtransport.open_channel("direct-tcpip", dest_addr, local_addr)
 #
 stdin, stdout, stderr = jhost.exec_command("show version | no-more") #edited#
