@@ -1,26 +1,20 @@
 #!/usr/bin/python
-#
-# Paramiko
-#
+
 import paramiko
 import sys
-import subprocess
-#
-# we instantiate a new object referencing paramiko's SSHClient class
-#
-vm = paramiko.SSHClient()
-vm.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-vm.connect('10.56.3.182', username='cs4843', password='')
-#
-vmtransport = vm.get_transport()
-dest_addr = (' ', 22) #edited#
-local_addr = ('10.56.3.182', 22) #edited#
-vmchannel = vmtransport.open_channel("direct-tcpip", dest_addr, local_addr)
-#
-stdin, stdout, stderr = jhost.exec_command("bin/spark-submit --master spark://group3-1:7077 /home/cc/spotifyProject.py") #edited#
-#
-print stdout.read() #edited#
-#
-jhost.close()
-vm.close()
-# End
+
+# Our VM's information
+host = "129.114.25.206" # Public key
+username = "cc"
+password = " "
+
+client = paramiko.client.SSHClient()
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+client.connect(host, username=username, password=password)
+_stdin, _stdout,_stderr = client.exec_command("bin/spark-submit --master spark://group3-1:7077 /home/cc/spotifyProject.py")
+print(stdout.read().decode())
+client.close()
+
+
+
+
