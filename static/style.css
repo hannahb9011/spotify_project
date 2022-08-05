@@ -1,0 +1,11 @@
+body {
+  font-family: "helvetica", sans-serif;
+  text-align: center;
+  background-color: rgb(47, 7, 224);;
+}
+h1 {
+    color: rgb(0, 132, 255);
+}
+p {
+    color: rgb(255, 0, 179);
+}
