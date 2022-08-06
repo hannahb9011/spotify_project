@@ -9,9 +9,14 @@ h1 {
     font-size: 300%;
     border: 2px solid gold;
 }
-p {
+.para1 {
     color: rgb(255, 0, 179);
     font-family: courier;
     font-size: 160%;
-    background: black;
+}
+.para2 {
+    color: rgb(0, 255, 42);
+    font-family: courier;
+    font-size: 100%;
+    background: black;  
 }
