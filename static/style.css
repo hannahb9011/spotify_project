@@ -1,11 +1,17 @@
 body {
   font-family: "helvetica", sans-serif;
   text-align: center;
-  background-color: rgb(47, 7, 224);;
+  background-color: rgb(27, 0, 150);;
 }
 h1 {
-    color: rgb(0, 132, 255);
+    color: yellow;
+    font-family: courier;
+    font-size: 300%;
+    border: 2px solid gold;
 }
 p {
     color: rgb(255, 0, 179);
+    font-family: courier;
+    font-size: 160%;
+    background: black;
 }
