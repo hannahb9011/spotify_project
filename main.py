@@ -1,6 +1,6 @@
 #!/usr/bin/python
 from flask import Flask, render_template
-import paramiko
+'''import paramiko
 
 # Our VM's information
 host = "129.114.25.206" # Public key
@@ -15,7 +15,7 @@ stdin, stdout, stderr = client.exec_command("./run_spark.sh")
 print(stdout.read().decode())
 
 stdin.close()
-client.close()
+client.close()'''
 
 # Copyright 2018 Google LLC
 #
