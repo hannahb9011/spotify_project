@@ -15,8 +15,8 @@ h1 {
     font-size: 160%;
 }
 .para2 {
-    color: rgb(0, 255, 42);
+    color: rgb(27, 0, 150);
     font-family: courier;
     font-size: 100%;
-    background: black;  
+    background: rgb(255, 0, 179);  
 }
