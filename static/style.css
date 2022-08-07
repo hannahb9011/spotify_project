@@ -10,7 +10,7 @@ h1 {
     border: 2px solid gold;
 }
 .para1 {
-    color: rgb(255, 0, 179);
+    color: yellow;
     font-family: courier;
     font-size: 160%;
 }
@@ -18,5 +18,5 @@ h1 {
     color: rgb(27, 0, 150);
     font-family: courier;
     font-size: 100%;
-    background: rgb(255, 0, 179);  
+    background: yellow;  
 }
