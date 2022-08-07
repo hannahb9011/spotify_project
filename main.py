@@ -1,26 +1,27 @@
+#!/usr/bin/python3
 from flask import Flask, render_template
-'''import paramiko 
+import paramiko 
 
 # Our VM's information
-host = "129.114.25.206" # Public key
+host = "129.114.25.206" # public key
 username = "cc"
 password = "csgroup3"
 
 client = paramiko.client.SSHClient()
 client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 client.connect(host, username=username, password=password)
-stdin, stdout, stderr = client.exec_command("./run_spark.sh")
-print(stdout.read().decode())
 
+stdin, stdout, stderr = client.exec_command("./run_spark.sh")
+data = stdout.read().decode()
 stdin.close()
-client.close()'''
+client.close()
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def root():
-    return render_template('index.html', var="This is a test")
+    return render_template('index.html', var=data)
 
 
 if __name__ == '__main__':
@@ -32,3 +33,4 @@ if __name__ == '__main__':
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
     app.run(host='127.0.0.1', port=8080, debug=True)
+
