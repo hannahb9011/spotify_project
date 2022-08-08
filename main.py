@@ -13,7 +13,7 @@ client.connect(host, username=username, password=password)
 
 stdin, stdout, stderr = client.exec_command("./run_spark.sh")
 data = stdout.read().decode()
-datasplit1 = data.split('()()()')
+datasplit = data.split('()()()')
 
 for x in range(len(datasplit1)):
     datasplit[x] = datasplit[x].split("~!")
