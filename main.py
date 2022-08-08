@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import paramiko 
 
 # Our VM's information
@@ -24,9 +24,18 @@ client.close()
 app = Flask(__name__)
 
 
-@app.route('/')
-def root():
-    return render_template('index.html', var=data)
+#@app.route('/')
+#def root():
+#    return render_template('index.html', var=data)
+@app.route("/", methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        if request.form.get('action1') == 'VALUE1':
+            return render_template('index.html', var=data)
+    elif request.method == 'GET':
+        return render_template('index.html', form=form)
+    
+    return render_template("index.html")
 
 
 if __name__ == '__main__':
