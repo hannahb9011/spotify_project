@@ -25,7 +25,10 @@
 
     <h1>Playlist Project</h1>
     <p class="para1">This app analyzes the spotify playlist called Top Music 2000-2022</p>
-    <p class="para2">{{ var }} </p>
-
+    {% for x in var %}
+       {% for i in x %}
+          <p class="para2"> {{ i }} </p><br>
+       {% endfor %}
+     {% endfor %}
 </body>
 </html>
