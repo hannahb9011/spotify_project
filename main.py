@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from flask import Flask, render_template, request
+import re
 import paramiko 
 
 # Our VM's information
@@ -15,7 +16,7 @@ stdin, stdout, stderr = client.exec_command("./run_spark.sh")
 data = stdout.read().decode()
 datasplit = data.split('()()()')
 
-for x in range(len(datasplit1)):
+for x in range(len(datasplit)):
     datasplit[x] = datasplit[x].split("~!")
 
 stdin.close()
@@ -23,20 +24,15 @@ client.close()
 
 app = Flask(__name__)
 
-
-#@app.route('/')
-#def root():
-#    return render_template('index.html', var=data)
 @app.route("/", methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if request.form.get('action1') == 'VALUE1':
-            return render_template('index.html', var=data)
+            return render_template('index.html', var=datasplit)
     elif request.method == 'GET':
-        return render_template('index.html', form=form)
+        return render_template('index.html')
     
     return render_template("index.html")
-
 
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
