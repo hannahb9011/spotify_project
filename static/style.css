@@ -18,5 +18,7 @@ h1 {
     color: rgb(27, 0, 150);
     font-family: courier;
     font-size: 100%;
-    background: yellow;  
+}
+.boxes{
+    background-color: rgb(237, 252, 210);
 }
